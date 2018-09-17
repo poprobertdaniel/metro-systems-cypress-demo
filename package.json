@@ -1,0 +1,16 @@
+{
+  "name": "metro-meetup-demo",
+  "version": "1.0.0",
+  "description": "Demo used for the presentation at the metro-systems meetup",
+  "main": "index.js",
+  "scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"cypress": "./node_modules/.bin/cypress open",
+		"headless": "./node_modules/.bin/cypress run -s cypress/integration/$folder/**/**/*"
+  },
+  "author": "Robert Pop",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^3.1.0"
+  }
+}
