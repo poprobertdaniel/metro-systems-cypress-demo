@@ -2,7 +2,6 @@ import { URL, fixturesPath } from '../../constants'
 
 describe('Front page testis', () => {
 	beforeEach( () => {
-		console.log(URL)
 		cy.visit(URL.base)
 		cy.readFile(`${fixturesPath}/homePageContent.json`).then( json => {
       const { pageTitle } = json
