@@ -2,15 +2,20 @@
   "name": "metro-meetup-demo",
   "version": "1.0.0",
   "description": "Demo used for the presentation at the metro-systems meetup",
-  "main": "index.js",
+	"main": "index.js",
   "scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"cypress": "./node_modules/.bin/cypress open",
-		"headless": "./node_modules/.bin/cypress run -s cypress/integration/$folder/**/**/*"
+		"precommit": "npm test",
+    "test": "./node_modules/.bin/cypress run --env environment=metro",
+    "cypress:google": "./node_modules/.bin/cypress open --env environment=google",
+    "cypress:metro": "./node_modules/.bin/cypress open --env environment=metro",
+    "headless:metro": "./node_modules/.bin/cypress run -s cypress/integration/$folder/**/**/* --env environment=metro",
+    "record:metro": "cypress run --record --key 0e1995b7-6356-4ca9-a466-4fbb797db152 --env environment=metro"
   },
   "author": "Robert Pop",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^3.1.0"
+    "cypress": "^3.1.0",
+    "husky": "^0.14.3",
+    "sendmail": "^1.4.1"
   }
 }
